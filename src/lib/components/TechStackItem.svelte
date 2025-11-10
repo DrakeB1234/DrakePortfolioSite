@@ -4,7 +4,7 @@
 
 <div class="tech-stack-item" style={`border-color: ${borderColor}`}>
   <img src={`/tech-icons/${text}.svg`} alt="" />
-  <p class="body">{text}</p>
+  <p class="caption">{text}</p>
 </div>
 
 <style>

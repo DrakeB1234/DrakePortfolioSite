@@ -1,5 +1,6 @@
 <script lang="ts">
-  export let size: number = 20;
+  import type { IconProps } from "$lib/types/types";
+  let { size = 24 }: IconProps = $props();
 </script>
 
 <svg height={size} viewBox="0 0 24 24" width={size}>

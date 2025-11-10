@@ -9,12 +9,18 @@ export type ProjectCardData = {
   iconColor?: string;
   projectTextBlocks?: string[];
   projectScreenshotLinks?: string[];
+  projectUsedResourcesLinks?: LibraryLink[];
 }
 
 type TechStackData = {
   name: string;
   color: string;
-}
+};
+
+type LibraryLink = {
+  link: string;
+  text: string;
+};
 
 const TECH_STACK_DATA = {
   react: { name: "React", color: "#61DAFB" } as TechStackData,
@@ -47,6 +53,13 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
     projectScreenshotLinks: [
       "/images/music-maestro/screenshot-1.webp",
       "/images/music-maestro/screenshot-2.webp",
+      "/images/music-maestro/screenshot-3.webp",
+    ],
+    projectUsedResourcesLinks: [
+      { link: "https://www.vexflow.com/", text: "Vex Flow" },
+      { link: "https://webmidijs.org/", text: "Web Midi" },
+      { link: "https://github.com/pmndrs/zustand", text: "Zustand" },
+      { link: "https://github.com/darosh/samples-piano-mp3", text: "Salamander Piano Samples" },
     ]
   },
   {

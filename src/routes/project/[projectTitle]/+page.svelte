@@ -1,13 +1,20 @@
 <script lang="ts">
   import ImageCarousel from "$lib/components/ImageCarousel.svelte";
   import TechStackItem from "$lib/components/TechStackItem.svelte";
+  import BackIcon from "$lib/icons/BackIcon.svelte";
   import SendIcon from "$lib/icons/SendIcon.svelte";
   import type { PageProps } from "./$types";
 
   let { data }: PageProps = $props();
 </script>
 
-<div class="wrapper">
+<nav class="wrapper project-nav">
+  <a href="/">
+    <BackIcon />
+    <p class="body">Back to Home</p>
+  </a>
+</nav>
+<section class="wrapper screenshots">
   {#if data.projectScreenshotLinks}
     <ImageCarousel
       images={data.projectScreenshotLinks}
@@ -16,8 +23,8 @@
       backgroundColor={"var(--color-primary-3xdark)"}
     />
   {/if}
-</div>
-<div class="wrapper">
+</section>
+<main class="wrapper">
   <h1 class="heading-secondary card-title">{data.projectTitle}</h1>
   <p class="body card-subtitle">{data.projectSubTitle}</p>
   <div class="tech-stack">
@@ -46,16 +53,40 @@
       <p class="body card-text">{block}</p>
     {/each}
   {/if}
-</div>
+  {#if data.projectUsedResourcesLinks}
+    <h2 class="body-large card-about-title">Used Resources</h2>
+    {#each data.projectUsedResourcesLinks as item}
+      <p class="body card-text">
+        {item.text}: <a href={item.link} target="_blank">{item.link}</a>
+      </p>
+    {/each}
+  {/if}
+</main>
 
 <style>
+  nav.project-nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    padding: var(--spacing-base);
+    background-color: var(--color-white);
+    z-index: 10;
+    border-bottom: 2px solid var(--color-neutral-base);
+
+    & a {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xsmall);
+      color: var(--color-primary-3xdark);
+    }
+  }
   .wrapper {
     max-width: 900px;
     padding: var(--spacing-base);
     padding-top: 0;
     padding-bottom: var(--spacing-large);
 
-    &:first-of-type {
+    &.screenshots {
       padding: 0;
     }
   }
@@ -77,6 +108,7 @@
 
     & a {
       display: flex;
+      align-items: center;
       gap: var(--spacing-2xsmall);
     }
 

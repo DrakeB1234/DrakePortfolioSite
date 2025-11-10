@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let size: number = 70;
-  export let color: string = "var(--color-primary-dark)";
+  import type { IconProps } from "$lib/types/types";
+  let { size, color = "var(--color-primary-xdark)" }: IconProps = $props();
 </script>
 
 <svg height={size} width={size} viewBox="0 0 66 66">

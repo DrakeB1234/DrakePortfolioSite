@@ -146,7 +146,7 @@ button {
   justify-content: center;
   align-items: center;
 
-  gap: var(--spacing-small);
+  gap: var(--spacing-xsmall);
   cursor: pointer;
   padding: var(--spacing-small) var(--spacing-large);
   background-color: var(--color-primary-base);
