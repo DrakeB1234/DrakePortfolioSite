@@ -1,0 +1,203 @@
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  font-family: 'Inter', sans-serif;
+  color: var(--color-primary-3xdark);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+:root {
+  --spacing-2xsmall: 0.25rem;
+  --spacing-xsmall: 0.5rem;
+  --spacing-small: 0.75rem;
+  --spacing-base: 1rem;
+  --spacing-large: 1.5rem;
+  --spacing-xlarge: 2rem;
+  --spacing-2xlarge: 3.5rem;
+  --spacing-3xlarge: 5rem;
+
+  --font-family: "Inter", sans-serif;
+  --font-weight-base: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-size-xsmall: 0.75rem;
+  --font-size-small: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-large: 1.125rem;
+  --font-size-xlarge: 1.5rem;
+  --font-size-2xlarge: 2.25rem;
+
+  --radius-small: 4px;
+  --radius-base: 8px;
+  --radius-large: 16px;
+  --radius-full: 99rem;
+
+  --color-primary-base: #2d83e6;
+  --color-primary-base-hover: hsl(212, 90%, 50%);
+  --color-primary-dark: #373E6D;
+  --color-primary-xdark: #373E6D;
+  --color-primary-2xdark: #272B4C;
+  --color-primary-3xdark: #28283D;
+  --color-neutral-light: hsl(233, 10%, 95%);
+  --color-neutral-base: #D5D6DD;
+  --color-neutral-dark: #BFC8D4;
+  --color-neutral-xdark: #7B7F9F;
+  --color-white: #ffffff;
+}
+
+.heading-primary {
+  font-size: var(--font-size-2xlarge);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  line-height: 1.4;
+}
+
+.subheading-primary {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-base);
+  color: var(--color-neutral-base);
+  line-height: 1em;
+  line-height: 1;
+}
+
+.heading-secondary {
+  font-size: var(--font-size-xlarge);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-3xdark);
+  line-height: 1em;
+}
+
+.body-large {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.4;
+}
+
+.body {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-base);
+  line-height: 1.2;
+}
+
+.caption {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-base);
+  line-height: 1.5;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 75em;
+  margin-inline: auto;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: var(--spacing-small);
+  cursor: pointer;
+  padding: var(--spacing-small) var(--spacing-large);
+  background-color: var(--color-primary-base);
+  border: none;
+  border-radius: var(--radius-base);
+  color: var(--color-primary-3xdark);
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--color-primary-base-hover);
+  }
+}
+
+button.primary {
+  color: var(--color-white);
+
+  &:hover {
+    background-color: var(--color-primary-base-hover);
+  }
+}
+
+.button-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+  gap: var(--spacing-small);
+  cursor: pointer;
+  padding: var(--spacing-small) var(--spacing-large);
+  background-color: var(--color-primary-base);
+  border: none;
+  border-radius: var(--radius-base);
+  color: var(--color-white);
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--color-primary-base-hover);
+  }
+}
+
+.button-link.outlined {
+  background-color: transparent;
+  border: 1px solid var(--color-neutral-dark);
+  color: var(--color-primary-3xdark);
+
+  &:hover {
+    background-color: var(--color-neutral-base);
+  }
+}
+
+button.outlined {
+  background-color: transparent;
+  border: 1px solid var(--color-neutral-dark);
+
+  &:hover {
+    background-color: var(--color-neutral-base);
+  }
+}
