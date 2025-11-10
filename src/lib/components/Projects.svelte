@@ -13,6 +13,7 @@
           projectSubTitle={cardData.projectSubTitle}
           projectDescription={cardData.projectDescription}
           techStack={cardData.techStack}
+          viewCodeLink={cardData.viewCodeLink}
           viewLiveLink={cardData.viewLiveLink}
           iconLink={cardData.iconLink}
           iconColor={cardData.iconColor}

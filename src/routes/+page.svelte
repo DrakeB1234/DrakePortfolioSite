@@ -1,5 +1,4 @@
 <script lang="ts">
-  import GithubIcon from "$lib/icons/GithubIcon.svelte";
   import EmailIcon from "$lib/icons/EmailIcon.svelte";
   import { onMount } from "svelte";
   import CircuitIcon from "$lib/icons/CircuitIcon.svelte";
@@ -67,7 +66,8 @@
         <a
           href="https://github.com/DrakeB1234"
           target="_blank"
-          aria-label="github"><GithubIcon size={40} /></a
+          aria-label="github"
+          ><img class="icon" src="/tech-icons/Github.svg" alt="" /></a
         >
       </li>
       <li>
@@ -123,8 +123,13 @@
     & ul {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: var(--spacing-base);
       margin-top: var(--spacing-base);
+    }
+
+    & img.icon {
+      width: 34px;
     }
   }
 

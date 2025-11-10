@@ -90,6 +90,11 @@ svg {
   --color-white: #ffffff;
 }
 
+a {
+  color: var(--color-primary-base);
+  text-decoration: none;
+}
+
 .heading-primary {
   font-size: var(--font-size-2xlarge);
   font-weight: var(--font-weight-bold);
@@ -200,4 +205,9 @@ button.outlined {
   &:hover {
     background-color: var(--color-neutral-base);
   }
+}
+
+img.icon {
+  width: 24px;
+  height: auto;
 }

@@ -1,15 +1,6 @@
 <script lang="ts">
+  import type { ProjectCardData } from "$lib/data/projectCardData";
   import { normalizeQuery } from "$lib/utils/format";
-
-  type props = {
-    projectTitle?: string;
-    projectSubTitle?: string;
-    projectDescription?: string;
-    techStack?: string[];
-    viewLiveLink?: string;
-    iconLink?: string;
-    iconColor?: string;
-  };
 
   let {
     projectTitle = "Title",
@@ -19,7 +10,8 @@
     iconLink = undefined,
     iconColor = undefined,
     viewLiveLink = undefined,
-  }: props = $props();
+    viewCodeLink = undefined,
+  }: Partial<ProjectCardData> = $props();
 </script>
 
 <div class="project-card">
@@ -34,7 +26,7 @@
   </div>
   <div class="card-tech-stack">
     {#each techStack as item}
-      <p class="caption">{item}</p>
+      <p class="caption">{item.name}</p>
     {/each}
   </div>
   <div class="card-description">
@@ -43,9 +35,13 @@
   <div class="card-buttons">
     <a
       class="button-link outlined"
-      href={`project?q=${normalizeQuery(projectTitle)}`}>Read More</a
+      href={`project/${normalizeQuery(projectTitle)}`}>Read More</a
     >
-    <a class="button-link" target="_blank" href={viewLiveLink}>View Live</a>
+    {#if viewLiveLink}
+      <a class="button-link" target="_blank" href={viewLiveLink}>View Live</a>
+    {:else if viewCodeLink}
+      <a class="button-link" target="_blank" href={viewCodeLink}>View Code</a>
+    {/if}
   </div>
 </div>
 
