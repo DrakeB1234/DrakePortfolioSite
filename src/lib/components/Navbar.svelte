@@ -4,7 +4,7 @@
 
 <nav class="navbar">
   <ul role="list">
-    <li><a href="#top" class:activeNav={activeSection === "top"}>Top</a></li>
+    <li><a href="#home" class:activeNav={activeSection === "home"}>Home</a></li>
     <li>
       <a href="#projects" class:activeNav={activeSection === "projects"}
         >Projects</a

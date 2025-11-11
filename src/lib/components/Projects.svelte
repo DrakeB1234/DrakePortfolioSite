@@ -33,7 +33,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-base);
-    padding: var(--spacing-base) var(--spacing-large);
+    padding: var(--spacing-large);
     padding-top: var(--spacing-xlarge);
   }
 

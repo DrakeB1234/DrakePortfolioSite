@@ -7,7 +7,7 @@
   import Contact from "$lib/components/Contact.svelte";
   import Projects from "$lib/components/Projects.svelte";
 
-  let activeSection = "top";
+  let activeSection = "home";
   const stickyNavHeight = 60;
 
   let sections: HTMLElement[] = [];
@@ -45,7 +45,7 @@
 </script>
 
 <main>
-  <section class="hero-section" id="top">
+  <section class="hero-section" id="home">
     <div class="wrapper">
       <h1 class="heading-primary">Hey, I'm Drake!</h1>
       <h2 class="subheading-primary">Web Developer</h2>

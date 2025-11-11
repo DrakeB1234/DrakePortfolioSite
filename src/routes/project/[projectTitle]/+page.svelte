@@ -2,6 +2,7 @@
   import ImageCarousel from "$lib/components/ImageCarousel.svelte";
   import TechStackItem from "$lib/components/TechStackItem.svelte";
   import BackIcon from "$lib/icons/BackIcon.svelte";
+  import OpenInNewIcon from "$lib/icons/OpenInNewIcon.svelte";
   import SendIcon from "$lib/icons/SendIcon.svelte";
   import type { PageProps } from "./$types";
 
@@ -35,13 +36,13 @@
   <div class="links">
     {#if data.viewCodeLink}
       <a href={data.viewCodeLink} target="_blank">
-        <SendIcon color="var(--color-primary-base)" />
+        <OpenInNewIcon color="var(--color-primary-base)" />
         <p class="body">View code</p>
       </a>
     {/if}
     {#if data.viewLiveLink}
       <a href={data.viewLiveLink} target="_blank">
-        <SendIcon color="var(--color-primary-base)" />
+        <OpenInNewIcon color="var(--color-primary-base)" />
         <p class="body">View live</p>
       </a>
     {/if}
@@ -68,7 +69,6 @@
     position: sticky;
     top: 0;
     display: flex;
-    padding: var(--spacing-base);
     background-color: var(--color-white);
     z-index: 10;
     border-bottom: 2px solid var(--color-neutral-base);
@@ -78,6 +78,7 @@
       align-items: center;
       gap: var(--spacing-xsmall);
       color: var(--color-primary-3xdark);
+      padding: var(--spacing-base);
     }
   }
   .wrapper {
@@ -87,6 +88,10 @@
     padding-bottom: var(--spacing-large);
 
     &.screenshots {
+      padding: 0;
+    }
+
+    &.project-nav {
       padding: 0;
     }
   }

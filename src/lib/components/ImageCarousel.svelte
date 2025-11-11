@@ -77,10 +77,14 @@
   </div>
   <div class="arrows">
     <button onclick={() => switchNextImage(-1)}>
-      <ArrowIcon color="var(--color-white)" />
+      <div class="icon-container">
+        <ArrowIcon color="var(--color-white)" />
+      </div>
     </button>
     <button onclick={() => switchNextImage(1)}>
-      <ArrowIcon color="var(--color-white)" flip />
+      <div class="icon-container">
+        <ArrowIcon color="var(--color-white)" flip />
+      </div>
     </button>
   </div>
 </div>
@@ -127,17 +131,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--spacing-xsmall);
-    transition: background-color 0.2s ease-in;
 
     & button {
-      background-color: #0000004b;
+      height: 100%;
+      background: none;
       padding: var(--spacing-xsmall);
-      border-radius: var(--radius-full);
+      border-radius: 0;
     }
 
-    & button:hover {
+    & button:hover > .icon-container {
       background-color: #ffffff23;
+    }
+
+    & .icon-container {
+      padding: var(--spacing-xsmall);
+      border-radius: var(--radius-full);
+      background-color: #0000004b;
+      transition: background-color 0.2s ease-in;
     }
   }
 

@@ -54,6 +54,7 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
       "/images/music-maestro/screenshot-1.webp",
       "/images/music-maestro/screenshot-2.webp",
       "/images/music-maestro/screenshot-3.webp",
+      "/images/music-maestro/screenshot-4.webp",
     ],
     projectUsedResourcesLinks: [
       { link: "https://www.vexflow.com/", text: "Vex Flow" },
@@ -80,6 +81,14 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
     iconColor: "#67E89F",
     techStack: [
       TECH_STACK_DATA.nextjs, TECH_STACK_DATA.supabase, TECH_STACK_DATA.vercel
+    ],
+    projectTextBlocks: [
+      "Supabase was used to handle/store user data and authentication. Application was wrapped in a provider to provide supabase functions and authentication to protected routes in the app.",
+      "Grocery list can utilize created/saved recipes to quickly add ingredients to your list.",
+      "Meal planner also utilizes recipes to be able to set a link to a particular recipe when set for that day of the week."
+    ],
+    projectUsedResourcesLinks: [
+      { link: "https://supabase.com/", text: "Supabase" },
     ]
   },
   {
@@ -91,6 +100,11 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
     iconColor: "#ffc0a1",
     techStack: [
       TECH_STACK_DATA.nextjs, TECH_STACK_DATA.vercel
+    ],
+    projectTextBlocks: [
+      "Utilizes a web scraper library to parse through HTML to find relevant recipe data, such as ingredients, images, instructions, and various other meta-data",
+      "Uses indexeddb to store recipes in a convient object that can easily be exported outside of the app and later reimported if desired",
+      "All scraped data can be changed if parts of a recipe don't match what the user expects or liked from the original."
     ]
   },
 ]

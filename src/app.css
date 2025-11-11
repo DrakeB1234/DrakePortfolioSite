@@ -137,7 +137,7 @@ a {
 
 .wrapper {
   width: 100%;
-  max-width: 75em;
+  max-width: 1000px;
   margin-inline: auto;
 }
 
@@ -154,6 +154,8 @@ button {
   border-radius: var(--radius-base);
   color: var(--color-primary-3xdark);
   transition: background-color 0.2s ease;
+
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     background-color: var(--color-primary-base-hover);
@@ -182,6 +184,7 @@ button.primary {
   border-radius: var(--radius-base);
   color: var(--color-white);
   transition: background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 
   &:hover {
     background-color: var(--color-primary-base-hover);

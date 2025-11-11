@@ -32,11 +32,10 @@
     background-color: var(--color-primary-2xdark);
 
     & > div.wrapper {
-      padding: var(--spacing-2xlarge);
+      padding: var(--spacing-2xlarge) var(--spacing-large);
     }
 
     & .heading-secondary {
-      max-width: 20em;
       color: var(--color-white);
     }
   }
