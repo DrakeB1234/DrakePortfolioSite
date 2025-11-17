@@ -9,6 +9,7 @@
 
   let activeSection = "home";
   const stickyNavHeight = 60;
+  const resumeChangedFileName = "Drake-Resume-2025.pdf";
 
   let sections: HTMLElement[] = [];
 
@@ -42,6 +43,18 @@
       window.removeEventListener("scroll", handleScroll);
     };
   });
+
+  const handleDownloadCvPressed = () => {
+    const confirmed = confirm(
+      `Do you want to download ${resumeChangedFileName}?`,
+    );
+    if (!confirmed) return;
+
+    const link = document.createElement("a");
+    link.href = "/files/resume.pdf";
+    link.download = resumeChangedFileName;
+    link.click();
+  };
 </script>
 
 <main>
@@ -56,7 +69,9 @@
   <About />
   <Contact />
   <footer class="footer">
-    <button class="resume-button outlined">Download CV</button>
+    <button onclick={handleDownloadCvPressed} class="resume-button outlined"
+      >Download CV</button
+    >
     <div class="icon-container">
       <CircuitIcon size={90} />
     </div>

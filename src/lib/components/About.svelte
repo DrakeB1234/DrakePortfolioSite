@@ -36,7 +36,7 @@
       max-width: 20em;
       max-height: 24em;
       object-fit: cover;
-      filter: brightness(0.8) saturate(0.6);
+      filter: saturate(0.7);
       border-radius: var(--radius-base);
     }
 

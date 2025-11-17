@@ -1,49 +1,60 @@
-<script>
+<script lang="ts">
   import SendIcon from "../icons/SendIcon.svelte";
+  const email: string = "dbuentello211607@gmail.com";
+
+  function handleSubmitEmail(e: SubmitEvent) {
+    e.preventDefault();
+    const form: HTMLFormElement = e.target as HTMLFormElement;
+    const data = new FormData(form);
+
+    const name = data.get("email");
+    const message = data.get("message");
+
+    console.log(name, message);
+  }
 </script>
 
 <section id="contact">
-  <div class="contact-header">
-    <div class="wrapper">
+  <div class="wrapper">
+    <div class="contact-form-container">
       <p class="heading-secondary">
         Interested? Don't Hesistate to Get in Contact With Me!
       </p>
+      <form class="contact-form" onsubmit={handleSubmitEmail}>
+        <label for="email">Email</label>
+        <input name="email" placeholder="youremail@gmail.com" />
+        <label for="message">Message</label>
+        <textarea
+          name="message"
+          placeholder="Hello Drake! I am interested in getting in contact with you regarding your web development."
+        ></textarea>
+        <button type="submit" class="primary">
+          <SendIcon size={20} />
+          Send
+        </button>
+      </form>
     </div>
   </div>
-  <div class="contact-form-container">
-    <form class="contact-form">
-      <input placeholder="youremail@gmail.com" />
-      <textarea
-        placeholder="Hello Drake! I am interested in getting in contact with you regarding your web development."
-      ></textarea>
-      <button
-        on:click|preventDefault={() => console.log("Sent")}
-        class="primary"
-      >
-        <SendIcon size={20} />
-        Send
-      </button>
-    </form>
-  </div>
+  `
 </section>
 
 <style>
-  .contact-header {
-    background-color: var(--color-primary-2xdark);
+  section {
+    background-color: var(--color-primary-3xdark);
 
     & > div.wrapper {
       padding: var(--spacing-2xlarge) var(--spacing-large);
     }
 
     & .heading-secondary {
+      text-align: center;
       color: var(--color-white);
+      margin-bottom: var(--spacing-2xlarge);
     }
   }
 
   .contact-form-container {
-    padding: var(--spacing-xlarge);
-    background-color: var(--color-primary-3xdark);
-    box-shadow: 0 10px 20px #00000020;
+    padding: var(--spacing-large);
   }
 
   .contact-form {

@@ -67,10 +67,24 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
     projectTitle: "Kaitlyn B Photography",
     projectSubTitle: "Business Site",
     projectDescription: "Website for a local photography business who specializes in couples and newborn photography.",
-    iconColor: "#A16778",
+    iconLink: "icons/Kaitlyn Buen Icon.svg",
+    viewCodeLink: "https://github.com/DrakeB1234/Kaitlyn-Buen-Photography",
+    viewLiveLink: "https://kaitlynbuenphotography.vercel.app/",
+    iconColor: "#9A2C61",
     techStack: [
       TECH_STACK_DATA.sveltekit, TECH_STACK_DATA.vite, TECH_STACK_DATA.vercel
-    ]
+    ],
+    projectTextBlocks: [
+      "Project was made to be as efficient and fast as possible, as there are many images hosted on the site by the photographer.",
+      "Images were normalized to be at most 2000px wide and converted into webp format for smallest possible size for hosting the images.",
+      "All data is dynamic, from pricing guide, to the reviews, making changes easy and quick.",
+    ],
+    projectScreenshotLinks: [
+      "/images/kaitlyn-buen-photography/screenshot-1.webp",
+      "/images/kaitlyn-buen-photography/screenshot-2.webp",
+      "/images/kaitlyn-buen-photography/screenshot-3.webp",
+      "/images/kaitlyn-buen-photography/screenshot-4.webp",
+    ],
   },
   {
     projectTitle: "Scratchify",
@@ -86,6 +100,11 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
       "Supabase was used to handle/store user data and authentication. Application was wrapped in a provider to provide supabase functions and authentication to protected routes in the app.",
       "Grocery list can utilize created/saved recipes to quickly add ingredients to your list.",
       "Meal planner also utilizes recipes to be able to set a link to a particular recipe when set for that day of the week."
+    ],
+    projectScreenshotLinks: [
+      "/images/scratchify/screenshot-1.webp",
+      "/images/scratchify/screenshot-2.webp",
+      "/images/scratchify/screenshot-3.webp",
     ],
     projectUsedResourcesLinks: [
       { link: "https://supabase.com/", text: "Supabase" },
@@ -105,6 +124,11 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
       "Utilizes a web scraper library to parse through HTML to find relevant recipe data, such as ingredients, images, instructions, and various other meta-data",
       "Uses indexeddb to store recipes in a convient object that can easily be exported outside of the app and later reimported if desired",
       "All scraped data can be changed if parts of a recipe don't match what the user expects or liked from the original."
-    ]
+    ],
+    projectScreenshotLinks: [
+      "/images/tasty-scrapes/screenshot-1.webp",
+      "/images/tasty-scrapes/screenshot-2.webp",
+      "/images/tasty-scrapes/screenshot-3.webp",
+    ],
   },
 ]
