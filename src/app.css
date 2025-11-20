@@ -43,12 +43,19 @@ a:not([class]) {
   text-decoration: none;
 }
 
-/* Make images easier to work with */
 img,
 picture,
 svg {
   max-width: 100%;
   display: block;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/inter-normal-100 900.woff2") format("woff2-variations");
+  font-weight: 400 600;
+  font-display: swap;
+  font-style: normal;
 }
 
 :root {
