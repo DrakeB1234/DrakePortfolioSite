@@ -50,12 +50,30 @@ svg {
   display: block;
 }
 
+/* Local fonts */
+
 @font-face {
-  font-family: "Inter";
-  src: url("/fonts/inter-normal-100 900.woff2") format("woff2-variations");
-  font-weight: 400 600;
   font-display: swap;
+  font-family: 'Inter';
   font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/inter-v20-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/inter-v20-latin-600.woff2') format('woff2');
 }
 
 :root {
@@ -69,9 +87,10 @@ svg {
   --spacing-3xlarge: 5rem;
 
   --font-family: "Inter", sans-serif;
-  --font-weight-base: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+  --font-weight-base: 400;
+  --font-weight-semibold: 500;
+  --font-weight-bold: 600;
+
   --font-size-xsmall: 0.75rem;
   --font-size-small: 0.875rem;
   --font-size-base: 1rem;
