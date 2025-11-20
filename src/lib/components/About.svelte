@@ -46,13 +46,13 @@
   }
   .about-text {
     & .heading-secondary {
-      max-width: 20em;
-      margin-bottom: var(--spacing-large);
+      max-width: var(--line-width-xsmall);
+      margin-bottom: var(--spacing-base);
     }
 
     & > p:not(p.heading-secondary) {
-      max-width: 20em;
-      line-height: 1.7;
+      max-width: var(--line-width-small);
+      line-height: 1.8;
     }
   }
 

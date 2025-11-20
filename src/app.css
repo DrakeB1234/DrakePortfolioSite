@@ -79,6 +79,12 @@ svg {
   --font-size-xlarge: 1.5rem;
   --font-size-2xlarge: 2.25rem;
 
+  --line-width-xsmall: 40ch;
+  --line-width-small: 50ch;
+  --line-width-base: 60ch;
+  --line-width-large: 70ch;
+  --line-width-xlarge: 80ch;
+
   --radius-small: 4px;
   --radius-base: 8px;
   --radius-large: 16px;

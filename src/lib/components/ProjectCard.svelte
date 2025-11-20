@@ -98,6 +98,7 @@
 
     & > p {
       color: var(--color-neutral-xdark);
+      max-width: var(--line-width-small);
     }
   }
   .card-buttons {

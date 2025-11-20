@@ -122,8 +122,9 @@
     }
   }
   .card-text {
-    width: 90%;
-    margin-top: var(--spacing-large);
+    max-width: var(--line-width-xlarge);
+    line-height: 1.8;
+    margin-top: var(--spacing-base);
     color: var(--color-neutral-xdark);
   }
   .card-about-title {
