@@ -22,14 +22,15 @@ type LibraryLink = {
   text: string;
 };
 
-const TECH_STACK_DATA = {
-  react: { name: "React", color: "#61DAFB" } as TechStackData,
-  vite: { name: "Vite", color: "#9231BE" } as TechStackData,
-  vercel: { name: "Vercel", color: "#212121" } as TechStackData,
-  sveltekit: { name: "SvelteKit", color: "#FF3E00" } as TechStackData,
-  nextjs: { name: "NextJs", color: "#212121" } as TechStackData,
-  supabase: { name: "Supabase", color: "#3ECF8E" } as TechStackData,
-  net: { name: ".NET", color: "#512BD4" } as TechStackData,
+const TECH_STACK_DATA: Record<string, TechStackData> = {
+  react: { name: "React", color: "#61DAFB" },
+  vite: { name: "Vite", color: "#9231BE" },
+  vercel: { name: "Vercel", color: "#212121" },
+  sveltekit: { name: "SvelteKit", color: "#FF3E00" },
+  nextjs: { name: "NextJs", color: "#212121" },
+  supabase: { name: "Supabase", color: "#3ECF8E" },
+  net: { name: ".NET", color: "#512BD4" },
+  typescript: { name: "Typescript", color: "#1976d2" },
 }
 
 export const PROJECT_CARD_DATA: ProjectCardData[] = [
@@ -130,5 +131,31 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
       "/images/tasty-scrapes/screenshot-2.webp",
       "/images/tasty-scrapes/screenshot-3.webp",
     ],
+  },
+  {
+    projectTitle: "Vector Score",
+    projectSubTitle: "TS Package",
+    projectDescription: "Package designed to create musical staffs in a lightweight bundle along with a simple to use API.",
+    viewCodeLink: "https://github.com/DrakeB1234/VectorScore",
+    iconLink: "icons/VectorScoreIcon.svg",
+    iconColor: "#edf0f7",
+    techStack: [
+      TECH_STACK_DATA.typescript, TECH_STACK_DATA.vite
+    ],
+    projectTextBlocks: [
+      "Doesn't rely on outside fonts, uses built in svg glyphs for creating clefs, notes, accidentals, etc.",
+      "Very lightweight, gzipped bundle size is only 8kb",
+      "Uses efficient means of writing to the DOM, such as creating fragments to batch draw to the DOM. Uses <defs> to define a set of svg paths that the MusicStaff instance will rely on instead of drawing a new path to the DOM for each instance of a glyph",
+      "Utilizes encapsulation to only expose public methods for interfacing with a instanced MusicStaff or Rhythm Staff",
+    ],
+    projectScreenshotLinks: [
+      "/images/vector-score/screenshot-1.webp",
+      "/images/vector-score/screenshot-2.webp",
+      "/images/vector-score/screenshot-3.webp",
+    ],
+    projectUsedResourcesLinks: [
+      { link: "https://github.com/steinbergmedia/bravura", text: "Bravura Font" },
+      { link: "https://github.com/0xfe/vexflow", text: "Vexflow for Reference" },
+    ]
   },
 ]

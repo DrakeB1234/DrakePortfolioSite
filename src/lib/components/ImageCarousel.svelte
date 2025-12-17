@@ -66,6 +66,7 @@
     {#each images as image, i (image)}
       {#if i === current}
         <img
+          loading="lazy"
           src={image}
           alt="carousel"
           class="carousel-image"

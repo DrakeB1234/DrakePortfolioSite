@@ -1,20 +1,20 @@
 <section class="about" id="about">
   <div class="wrapper">
-    <img src="images/picofme.webp" alt="" />
+    <img loading="lazy" src="images/picofme.webp" alt="" />
     <div class="about-text">
-      <p class="heading-secondary">
-        Web Developer With A Passion For Efficiency
+      <p class="heading-secondary bold">
+        Building Efficient Solutions through Clean Code
       </p>
       <p class="body">
-        Im a passionate web developer with a eye for efficiency and good coding
-        practices. I strive to make the quickest and most-maintainable programs
-        for every project I work on.
+        I don't just write code; I build systems that last. With an eye for
+        optimization and a commitment to best practices, I focus on creating the
+        fastest, most reliable programs possible for every client.
       </p>
       <p class="body">
         I specialize in React and .NET for developing frontend and backend
-        solutions. However, I can work on many different softwares or
-        technologies, even if its completely new to me and get working on a
-        project as quick as possible.
+        solutions. However, I can work on many different technologies, even if
+        its completely new to me; to get working on a project as quick as
+        possible.
       </p>
     </div>
   </div>

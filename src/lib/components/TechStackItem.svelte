@@ -3,7 +3,7 @@
 </script>
 
 <div class="tech-stack-item" style={`border-color: ${borderColor}`}>
-  <img src={`/tech-icons/${text}.svg`} alt="" />
+  <img loading="lazy" src={`/tech-icons/${text}.svg`} alt="" />
   <p class="caption">{text}</p>
 </div>
 

@@ -1,12 +1,11 @@
 <script lang="ts">
-  import ImageCarousel from "$lib/components/ImageCarousel.svelte";
-  import TechStackItem from "$lib/components/TechStackItem.svelte";
+  import type { ProjectCardData } from "$lib/data/projectCardData";
   import BackIcon from "$lib/icons/BackIcon.svelte";
   import OpenInNewIcon from "$lib/icons/OpenInNewIcon.svelte";
-  import SendIcon from "$lib/icons/SendIcon.svelte";
-  import type { PageProps } from "./$types";
+  import ImageCarousel from "./ImageCarousel.svelte";
+  import TechStackItem from "./TechStackItem.svelte";
 
-  let { data }: PageProps = $props();
+  let { data }: { data: ProjectCardData } = $props();
 </script>
 
 <nav class="wrapper project-nav">

@@ -17,7 +17,7 @@
 <div class="project-card">
   <div class="card-header">
     <div class="card-icon" style={`background-color: ${iconColor}`}>
-      <img src={iconLink} alt="" />
+      <img loading="lazy" src={iconLink} alt="" />
     </div>
     <div class="card-text">
       <p class="body-large">{projectTitle}</p>

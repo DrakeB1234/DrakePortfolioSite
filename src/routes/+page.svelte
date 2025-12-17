@@ -1,7 +1,6 @@
 <script lang="ts">
   import EmailIcon from "$lib/icons/EmailIcon.svelte";
   import { onMount } from "svelte";
-  import CircuitIcon from "$lib/icons/CircuitIcon.svelte";
   import Navbar from "$lib/components/Navbar.svelte";
   import About from "$lib/components/About.svelte";
   import Contact from "$lib/components/Contact.svelte";
@@ -73,7 +72,7 @@
       >Download CV</button
     >
     <div class="icon-container">
-      <CircuitIcon size={90} />
+      <img loading="lazy" src="/icons/portfolio-circuit.svg" alt="" />
     </div>
     <p class="caption">Drake Buentello 2025</p>
     <ul role="list">
@@ -82,7 +81,12 @@
           href="https://github.com/DrakeB1234"
           target="_blank"
           aria-label="github"
-          ><img class="icon" src="/tech-icons/Github.svg" alt="" /></a
+          ><img
+            class="icon"
+            loading="lazy"
+            src="/tech-icons/Github.svg"
+            alt=""
+          /></a
         >
       </li>
       <li>

@@ -50,32 +50,6 @@ svg {
   display: block;
 }
 
-/* Local fonts */
-
-@font-face {
-  font-display: swap;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/inter-v20-latin-regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-display: swap;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  src: url('../fonts/inter-v20-latin-500.woff2') format('woff2');
-}
-
-@font-face {
-  font-display: swap;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../fonts/inter-v20-latin-600.woff2') format('woff2');
-}
-
 :root {
   --spacing-2xsmall: 0.25rem;
   --spacing-xsmall: 0.5rem;
@@ -86,7 +60,7 @@ svg {
   --spacing-2xlarge: 3.5rem;
   --spacing-3xlarge: 5rem;
 
-  --font-family: "Inter", sans-serif;
+  --system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --font-weight-base: 400;
   --font-weight-semibold: 500;
   --font-weight-bold: 600;
@@ -144,14 +118,14 @@ a {
 
 .heading-secondary {
   font-size: var(--font-size-xlarge);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   color: var(--color-primary-3xdark);
   line-height: 1em;
 }
 
 .body-large {
   font-size: var(--font-size-large);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   line-height: 1.4;
 }
 
@@ -159,6 +133,11 @@ a {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-base);
   line-height: 1.2;
+}
+
+.bold {
+  font-weight: var(--font-weight-bold);
+
 }
 
 .caption {
