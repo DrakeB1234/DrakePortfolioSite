@@ -7,9 +7,10 @@ export type ProjectCardData = {
   techStack?: TechStackData[];
   iconLink?: string;
   iconColor?: string;
-  projectTextBlocks?: string[];
   projectScreenshotLinks?: string[];
-  projectUsedResourcesLinks?: LibraryLink[];
+  projectTextBlocks?: string[];
+  projectLinks?: Link[];
+  projectUsedResourcesLinks?: Link[];
 }
 
 type TechStackData = {
@@ -17,7 +18,7 @@ type TechStackData = {
   color: string;
 };
 
-type LibraryLink = {
+type Link = {
   link: string;
   text: string;
 };
@@ -34,6 +35,30 @@ const TECH_STACK_DATA: Record<string, TechStackData> = {
 }
 
 export const PROJECT_CARD_DATA: ProjectCardData[] = [
+  {
+    projectTitle: "Kaitlyn B Photography",
+    projectSubTitle: "Business Site",
+    projectDescription: "Website for a local photography business who specializes in couples and newborn photography.",
+    iconLink: "icons/Kaitlyn Buen Icon.svg",
+    viewCodeLink: "https://github.com/DrakeB1234/Kaitlyn-Buen-Photography",
+    viewLiveLink: "https://kaitlynbuenphotography.vercel.app/",
+    iconColor: "#9A2C61",
+    techStack: [
+      TECH_STACK_DATA.sveltekit, TECH_STACK_DATA.vite, TECH_STACK_DATA.vercel
+    ],
+    projectTextBlocks: [
+      "Applied best SEO practices by using Google Search Console and ensuring best performance/SEO through LightHouse.",
+      "Project was made to be as efficient and fast as possible, as there are many images hosted on the site by the photographer.",
+      "Images were normalized to be at most 2000px wide and converted into webp format for smallest possible size for hosting the images.",
+      "All data is dynamic, from pricing guide, to the reviews, making changes easy and quick.",
+    ],
+    projectScreenshotLinks: [
+      "/images/kaitlyn-buen-photography/screenshot-1.webp",
+      "/images/kaitlyn-buen-photography/screenshot-2.webp",
+      "/images/kaitlyn-buen-photography/screenshot-3.webp",
+      "/images/kaitlyn-buen-photography/screenshot-4.webp",
+    ],
+  },
   {
     projectTitle: "Music Maestro",
     projectSubTitle: "Web app",
@@ -65,27 +90,33 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
     ]
   },
   {
-    projectTitle: "Kaitlyn B Photography",
-    projectSubTitle: "Business Site",
-    projectDescription: "Website for a local photography business who specializes in couples and newborn photography.",
-    iconLink: "icons/Kaitlyn Buen Icon.svg",
-    viewCodeLink: "https://github.com/DrakeB1234/Kaitlyn-Buen-Photography",
-    viewLiveLink: "https://kaitlynbuenphotography.vercel.app/",
-    iconColor: "#9A2C61",
+    projectTitle: "Vector Score",
+    projectSubTitle: "TS Package",
+    projectDescription: "Library designed for musical notation in a lightweight bundle along with a simple to use API.",
+    viewCodeLink: "https://github.com/DrakeB1234/VectorScore",
+    iconLink: "icons/VectorScoreIcon.svg",
+    iconColor: "#edf0f7",
     techStack: [
-      TECH_STACK_DATA.sveltekit, TECH_STACK_DATA.vite, TECH_STACK_DATA.vercel
+      TECH_STACK_DATA.typescript, TECH_STACK_DATA.vite
     ],
     projectTextBlocks: [
-      "Project was made to be as efficient and fast as possible, as there are many images hosted on the site by the photographer.",
-      "Images were normalized to be at most 2000px wide and converted into webp format for smallest possible size for hosting the images.",
-      "All data is dynamic, from pricing guide, to the reviews, making changes easy and quick.",
+      "Doesn't rely on outside fonts, uses built in svg glyphs for creating clefs, notes, accidentals, etc.",
+      "Very lightweight, gzipped bundle size is only 9kb",
+      "Uses efficient means of writing to the DOM, such as creating fragments to batch draw to the DOM. Uses <defs> to define a set of svg paths that the MusicStaff instance will rely on instead of drawing a new path to the DOM for each instance of a glyph",
+      "Utilizes encapsulation to only expose public methods for interfacing with a instanced MusicStaff or Rhythm Staff",
+    ],
+    projectLinks: [
+      { link: "https://www.npmjs.com/package/vector-score", text: "NPM Package" },
     ],
     projectScreenshotLinks: [
-      "/images/kaitlyn-buen-photography/screenshot-1.webp",
-      "/images/kaitlyn-buen-photography/screenshot-2.webp",
-      "/images/kaitlyn-buen-photography/screenshot-3.webp",
-      "/images/kaitlyn-buen-photography/screenshot-4.webp",
+      "/images/vector-score/screenshot-1.webp",
+      "/images/vector-score/screenshot-2.webp",
+      "/images/vector-score/screenshot-3.webp",
     ],
+    projectUsedResourcesLinks: [
+      { link: "https://github.com/steinbergmedia/bravura", text: "Bravura Font" },
+      { link: "https://github.com/0xfe/vexflow", text: "Vexflow for Reference" },
+    ]
   },
   {
     projectTitle: "Scratchify",
@@ -131,31 +162,5 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
       "/images/tasty-scrapes/screenshot-2.webp",
       "/images/tasty-scrapes/screenshot-3.webp",
     ],
-  },
-  {
-    projectTitle: "Vector Score",
-    projectSubTitle: "TS Package",
-    projectDescription: "Package designed to create musical staffs in a lightweight bundle along with a simple to use API.",
-    viewCodeLink: "https://github.com/DrakeB1234/VectorScore",
-    iconLink: "icons/VectorScoreIcon.svg",
-    iconColor: "#edf0f7",
-    techStack: [
-      TECH_STACK_DATA.typescript, TECH_STACK_DATA.vite
-    ],
-    projectTextBlocks: [
-      "Doesn't rely on outside fonts, uses built in svg glyphs for creating clefs, notes, accidentals, etc.",
-      "Very lightweight, gzipped bundle size is only 8kb",
-      "Uses efficient means of writing to the DOM, such as creating fragments to batch draw to the DOM. Uses <defs> to define a set of svg paths that the MusicStaff instance will rely on instead of drawing a new path to the DOM for each instance of a glyph",
-      "Utilizes encapsulation to only expose public methods for interfacing with a instanced MusicStaff or Rhythm Staff",
-    ],
-    projectScreenshotLinks: [
-      "/images/vector-score/screenshot-1.webp",
-      "/images/vector-score/screenshot-2.webp",
-      "/images/vector-score/screenshot-3.webp",
-    ],
-    projectUsedResourcesLinks: [
-      { link: "https://github.com/steinbergmedia/bravura", text: "Bravura Font" },
-      { link: "https://github.com/0xfe/vexflow", text: "Vexflow for Reference" },
-    ]
   },
 ]

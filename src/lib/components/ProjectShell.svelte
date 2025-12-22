@@ -53,6 +53,14 @@
       <p class="body card-text">{block}</p>
     {/each}
   {/if}
+  {#if data.projectLinks}
+    <h2 class="body-large card-about-title">Additonal Links</h2>
+    {#each data.projectLinks as item}
+      <p class="body card-text">
+        {item.text}: <a href={item.link} target="_blank">{item.link}</a>
+      </p>
+    {/each}
+  {/if}
   {#if data.projectUsedResourcesLinks}
     <h2 class="body-large card-about-title">Used Resources</h2>
     {#each data.projectUsedResourcesLinks as item}
