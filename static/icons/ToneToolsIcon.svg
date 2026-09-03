@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="48" height="48" fill="none"
+  viewBox="0 0 192 192">
+  <g id="PWA Icon 192x192" clip-path="url(#clip0_640_917)">
+    <g id="Group 22">
+      <rect id="Rectangle 149" width="192" height="192" fill="#0593DA" rx="28" />
+      <path id="Vector" fill="#EBF8FF" fill-rule="evenodd"
+        d="M35 66c0-17 17-37 47-37 38 0 59 23 76 0 0 21-16 30-35 28v87c6 0 30-17 34-26 0 13-14 44-53 44-37 0-61-25-61-53 0-37 32-58 36-60-23-1-33 3-44 17m83-10-13-2v49c0 14-22 33-22 33q15 9 35 9zm-32-6c-25 28-30 59-7 83 0 0 7-8 7-15z" />
+    </g>
+  </g>
+  <defs>
+    <clipPath id="clip0_640_917">
+      <rect width="192" height="192" fill="#fff" />
+    </clipPath>
+  </defs>
+</svg>

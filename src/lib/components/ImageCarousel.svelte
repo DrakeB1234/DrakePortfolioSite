@@ -9,7 +9,6 @@
     interval?: number;
     width?: number | "full";
     height?: number;
-    backgroundColor?: string;
   };
 
   let {
@@ -17,7 +16,6 @@
     interval = 3000,
     width = "full",
     height = 400,
-    backgroundColor = "black",
   }: Props = $props();
 
   let current = $state(0);
@@ -28,11 +26,6 @@
       clearInterval(timer);
       timer = 0;
     }
-  };
-
-  const switchImageToIdx = (idx: number) => {
-    current = idx;
-    stopAutoSlide();
   };
 
   const switchNextImage = (value: number) => {
@@ -59,14 +52,12 @@
   style="
     width: {width === 'full' ? '100%' : `${width}px`};
     height: {height}px;
-    background-color: {backgroundColor};
   "
 >
   <div class="carousel-inner">
     {#each images as image, i (image)}
       {#if i === current}
         <img
-          loading="lazy"
           src={image}
           alt="carousel"
           class="carousel-image"
@@ -76,27 +67,23 @@
       {/if}
     {/each}
   </div>
-  <div class="arrows">
-    <button onclick={() => switchNextImage(-1)}>
-      <div class="icon-container">
-        <ArrowIcon color="var(--color-white)" />
-      </div>
-    </button>
-    <button onclick={() => switchNextImage(1)}>
-      <div class="icon-container">
-        <ArrowIcon color="var(--color-white)" flip />
-      </div>
-    </button>
-  </div>
 </div>
-<div class="carousel-dots" style="background-color: {backgroundColor};">
-  {#each images as _, i}
-    <button
-      onclick={() => switchImageToIdx(i)}
-      aria-label="switch-to-image-{i}"
-      class="carousel-dot-button {current === i ? 'active' : ''}"
-    ></button>
-  {/each}
+<div class="carousel__bottom">
+  <button class="carousel__control" onclick={() => switchNextImage(-1)}>
+    <ArrowIcon color="var(--color-white)" />
+  </button>
+
+  <div class="carousel-dots">
+    {#each images as _, i}
+      <div
+        aria-label="switch-to-image-{i}"
+        class="carousel-dot-button {current === i ? 'active' : ''}"
+      ></div>
+    {/each}
+  </div>
+  <button class="carousel__control" onclick={() => switchNextImage(1)}>
+    <ArrowIcon color="var(--color-white)" flip />
+  </button>
 </div>
 
 <style>
@@ -106,7 +93,6 @@
     justify-content: center;
     overflow: hidden;
     position: relative;
-    padding: var(--spacing-base);
     box-sizing: border-box;
   }
 
@@ -125,39 +111,29 @@
     user-select: none;
   }
 
-  .arrows {
-    position: absolute;
-    z-index: 2;
-    inset: 0;
+  .carousel__bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: var(--space-16);
+  }
 
-    & button {
-      height: 100%;
-      background: none;
-      padding: var(--spacing-xsmall);
-      border-radius: 0;
-    }
+  .carousel__control {
+    cursor: pointer;
+    padding: var(--space-8);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background-color: transparent;
+  }
 
-    & button:hover > .icon-container {
-      background-color: #ffffff23;
-    }
-
-    & .icon-container {
-      padding: var(--spacing-xsmall);
-      border-radius: var(--radius-full);
-      background-color: #0000004b;
-      transition: background-color 0.2s ease-in;
-    }
+  .carousel__control:active {
+    background-color: var(--color-bg-surface-2-active);
   }
 
   .carousel-dots {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-xsmall);
-    padding: var(--spacing-base);
-    padding-top: 0;
+    gap: var(--space-4);
   }
 
   .carousel-dot-button {
@@ -165,10 +141,11 @@
     width: 10px;
     height: 10px;
     border-radius: var(--radius-full);
-    background-color: var(--color-neutral-xdark);
+    border: 1px solid var(--color-border);
+    background-color: transparent;
+  }
 
-    &.active {
-      background-color: var(--color-white);
-    }
+  .carousel-dot-button.active {
+    background-color: white;
   }
 </style>

@@ -3,48 +3,56 @@
 </script>
 
 <nav class="navbar">
-  <ul role="list">
-    <li><a href="#home" class:activeNav={activeSection === "home"}>Home</a></li>
-    <li>
-      <a href="#projects" class:activeNav={activeSection === "projects"}
+  <div class="navbar__content flex-row">
+    <a href="/" class="navbar__logo">
+      <img src="/logo.svg" alt="Logo" />
+    </a>
+    <div class="navbar__links flex-row mobile-hide">
+      <a href="#home" class:active={activeSection === "home"}>Home</a>
+      <a href="#projects" class:active={activeSection === "projects"}
         >Projects</a
       >
-    </li>
-    <li>
-      <a href="#about" class:activeNav={activeSection === "about"}>About</a>
-    </li>
-    <li>
-      <a href="#contact" class:activeNav={activeSection === "contact"}
-        >Contact</a
-      >
-    </li>
-  </ul>
+      <a href="#about" class:active={activeSection === "about"}>About</a>
+
+      <a href="#contact" class:active={activeSection === "contact"}>Contact</a>
+    </div>
+    <div class="navbar__mobile-links flex-row mobile-show">
+      <a href="#contact" class:active={activeSection === "contact"}>Contact</a>
+    </div>
+  </div>
 </nav>
 
 <style>
   .navbar {
     position: sticky;
     inset: 0 0 0 0;
-    background-color: var(--color-white);
+    bottom: unset;
+    background-color: var(--color-bg-surface-1);
     z-index: 10;
-    border-bottom: 1px solid var(--color-neutral-base);
+    border-bottom: 1px solid var(--color-border-subtle);
+    box-shadow: var(--shadow-1);
   }
-  .navbar > ul {
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    flex-wrap: wrap;
-    gap: var(--spacing-large);
-    padding: var(--spacing-base) var(--spacing-base);
+  .navbar__content {
+    max-width: var(--app-max-width);
+    margin: 0 auto;
+    padding: var(--space-12) var(--space-16);
+  }
+  .navbar__logo {
+    margin-right: var(--space-36);
+  }
+  .navbar__logo img {
+    width: 36px;
+    height: auto;
+  }
+  .navbar__links {
+    gap: var(--space-24);
+  }
+  .navbar__mobile-links {
+    width: 100%;
+    justify-content: end;
+  }
 
-    & > li > a {
-      text-decoration: none;
-      color: var(--color-primary-3xdark);
-    }
-
-    & > li > a.activeNav {
-      font-weight: var(--font-weight-bold);
-      font-size: var(--font-size-large);
-    }
+  a.active {
+    font-weight: var(--font-weight-bold);
   }
 </style>

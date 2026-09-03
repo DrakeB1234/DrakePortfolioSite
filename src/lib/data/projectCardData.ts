@@ -23,7 +23,7 @@ type Link = {
   text: string;
 };
 
-const TECH_STACK_DATA: Record<string, TechStackData> = {
+const TECH_STACK_DATA = {
   react: { name: "React", color: "#61DAFB" },
   vite: { name: "Vite", color: "#9231BE" },
   vercel: { name: "Vercel", color: "#212121" },
@@ -32,17 +32,50 @@ const TECH_STACK_DATA: Record<string, TechStackData> = {
   supabase: { name: "Supabase", color: "#3ECF8E" },
   net: { name: ".NET", color: "#512BD4" },
   typescript: { name: "Typescript", color: "#1976d2" },
-}
+} satisfies Record<string, TechStackData>;
 
 export const PROJECT_CARD_DATA: ProjectCardData[] = [
   {
+    projectTitle: "Tone Tools",
+    projectSubTitle: "Web app",
+    projectDescription: "Web application designed to help teach those new to sight reading and music theory.",
+    viewCodeLink: "https://github.com/DrakeB1234/ToneTools",
+    viewLiveLink: "https://tonetools.vercel.app",
+    iconLink: "icons/ToneToolsIcon.svg",
+    iconColor: "#0593da",
+    techStack: [
+      TECH_STACK_DATA.sveltekit, TECH_STACK_DATA.vite, TECH_STACK_DATA.vercel
+    ],
+    projectTextBlocks: [
+      "Required the programming of complex audio functions, such as lookahead schedulers, in order to get tools such as Chord Progression and Polyrhythms to work properly.",
+      "Utilizes native web api's for many app functions, such as web audio, local storage, and web midi interfaces.",
+      "Highly efficient use of CSS variables and utility classes for ease of reuse and modification. This is heavily used for creating new tools quickly without much need for redesigning.",
+      "Web midi interface is completely made by hand for smaller file size and more tailored to my particular needs.",
+      "HowlerJS helps bridge many parts of the app with an easy to use API for processing audio. This is used for my piano and sound effects throughout much of the app.",
+      "TonalJS used heavily for its music theory helpers for much of the logic of this application (nearly every tool and exercise!).",
+    ],
+    projectScreenshotLinks: [
+      "/images/tone-tools/screenshot-1.webp",
+      "/images/tone-tools/screenshot-2.webp",
+      "/images/tone-tools/screenshot-3.webp",
+      "/images/tone-tools/screenshot-4.webp",
+    ],
+    projectUsedResourcesLinks: [
+      { link: "https://github.com/tonaljs/tonal", text: "TonalJS: Music Theory" },
+      { link: "https://howlerjs.com/", text: "HowlerJS: Web Audio Library" },
+      { link: "https://github.com/DrakeB1234/VectorScore", text: "Vector Score: Custom Made" },
+      { link: "https://github.com/darosh/samples-piano-mp3", text: "Salamander: Piano Samples" },
+      { link: "https://freesound.org/", text: "Free Sound: CC0 Sound Effects" },
+    ]
+  },
+  {
     projectTitle: "Kaitlyn B Photography",
     projectSubTitle: "Business Site",
-    projectDescription: "Website for a local photography business who specializes in couples and newborn photography.",
+    projectDescription: "Website for a local photography business who specializes in engagement and couples photography.",
     iconLink: "icons/Kaitlyn Buen Icon.svg",
     viewCodeLink: "https://github.com/DrakeB1234/Kaitlyn-Buen-Photography",
-    viewLiveLink: "https://kaitlynbuenphotography.vercel.app/",
-    iconColor: "#9A2C61",
+    viewLiveLink: "https://kaitlynbuenphotography.com",
+    iconColor: "#ff78b0",
     techStack: [
       TECH_STACK_DATA.sveltekit, TECH_STACK_DATA.vite, TECH_STACK_DATA.vercel
     ],
@@ -57,37 +90,8 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
       "/images/kaitlyn-buen-photography/screenshot-2.webp",
       "/images/kaitlyn-buen-photography/screenshot-3.webp",
       "/images/kaitlyn-buen-photography/screenshot-4.webp",
+      "/images/kaitlyn-buen-photography/screenshot-5.webp",
     ],
-  },
-  {
-    projectTitle: "Music Maestro",
-    projectSubTitle: "Web app",
-    projectDescription: "Web application designed to help teach those new to sight reading and music theory.",
-    viewCodeLink: "https://github.com/DrakeB1234/Music-Maestro",
-    viewLiveLink: "https://music-maestro-nine.vercel.app",
-    iconLink: "icons/Music Maestro Icon.svg",
-    iconColor: "#6aa3f7",
-    techStack: [
-      TECH_STACK_DATA.react, TECH_STACK_DATA.vite, TECH_STACK_DATA.vercel
-    ],
-    projectTextBlocks: [
-      "Built using libraries such as Vexflow and Webmidi to handle staff generation and reading external MIDI inputs from compatible devices.",
-      "Sight reading drills were made using Zustand to handle rapidly changing game state in a graceful and percise way. Zustand stores are used to handle states such as score, options, timers, and input devices",
-      "Using the browsers native AudioPlayer API and piano samples, midi playback can be turned on in the app to allow for the corresponding piano sound to play in the sight-reading drill",
-      "User config can be used to customize sight reading drills as well as allowing and modifying the MIDI playback option."
-    ],
-    projectScreenshotLinks: [
-      "/images/music-maestro/screenshot-1.webp",
-      "/images/music-maestro/screenshot-2.webp",
-      "/images/music-maestro/screenshot-3.webp",
-      "/images/music-maestro/screenshot-4.webp",
-    ],
-    projectUsedResourcesLinks: [
-      { link: "https://www.vexflow.com/", text: "Vex Flow" },
-      { link: "https://webmidijs.org/", text: "Web Midi" },
-      { link: "https://github.com/pmndrs/zustand", text: "Zustand" },
-      { link: "https://github.com/darosh/samples-piano-mp3", text: "Salamander Piano Samples" },
-    ]
   },
   {
     projectTitle: "Vector Score",
@@ -150,7 +154,7 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
     iconLink: "icons/TastyScrapesIcon.svg",
     iconColor: "#ffc0a1",
     techStack: [
-      TECH_STACK_DATA.nextjs, TECH_STACK_DATA.vercel
+      TECH_STACK_DATA.nextjs, TECH_STACK_DATA.react, TECH_STACK_DATA.vercel
     ],
     projectTextBlocks: [
       "Utilizes a web scraper library to parse through HTML to find relevant recipe data, such as ingredients, images, instructions, and various other meta-data",

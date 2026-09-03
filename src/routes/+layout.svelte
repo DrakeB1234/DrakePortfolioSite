@@ -1,12 +1,11 @@
 <script lang="ts">
-	import favicon from "$lib/assets/Logo.svg";
 	import "../app.css";
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={"/logo.svg"} />
 	<title>Drake Portfolio</title>
 </svelte:head>
 
