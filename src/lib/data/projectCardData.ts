@@ -96,7 +96,7 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
   {
     projectTitle: "Vector Score",
     projectSubTitle: "TS Package",
-    projectDescription: "Library designed for musical notation in a lightweight bundle along with a simple to use API.",
+    projectDescription: "Library designed for displaying musical notation and guitar chord diagrams on the web. Features a light-weight tree-shakable codebase and simple to use API.",
     viewCodeLink: "https://github.com/DrakeB1234/VectorScore",
     iconLink: "icons/VectorScoreIcon.svg",
     iconColor: "#edf0f7",
@@ -105,7 +105,8 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
     ],
     projectTextBlocks: [
       "Doesn't rely on outside fonts, uses built in svg glyphs for creating clefs, notes, accidentals, etc.",
-      "Very lightweight, gzipped bundle size is only 9kb",
+      "Very lightweight, gzipped bundle size is only 12kb",
+      "Features displaying musical information in musical notation and guitar chord diagrams.",
       "Uses efficient means of writing to the DOM, such as creating fragments to batch draw to the DOM. Uses <defs> to define a set of svg paths that the MusicStaff instance will rely on instead of drawing a new path to the DOM for each instance of a glyph",
       "Utilizes encapsulation to only expose public methods for interfacing with a instanced MusicStaff or Rhythm Staff",
     ],
@@ -116,6 +117,8 @@ export const PROJECT_CARD_DATA: ProjectCardData[] = [
       "/images/vector-score/screenshot-1.webp",
       "/images/vector-score/screenshot-2.webp",
       "/images/vector-score/screenshot-3.webp",
+      "/images/vector-score/screenshot-4.webp",
+      "/images/vector-score/recording-1.webm",
     ],
     projectUsedResourcesLinks: [
       { link: "https://github.com/steinbergmedia/bravura", text: "Bravura Font" },

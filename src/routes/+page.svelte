@@ -57,18 +57,6 @@
       window.removeEventListener("scroll", handleScroll);
     };
   });
-
-  const handleDownloadCvPressed = () => {
-    const confirmed = confirm(
-      `Do you want to download ${resumeChangedFileName}?`,
-    );
-    if (!confirmed) return;
-
-    const link = document.createElement("a");
-    link.href = "/files/resume.pdf";
-    link.download = resumeChangedFileName;
-    link.click();
-  };
 </script>
 
 <main>
@@ -137,15 +125,22 @@
     <p class="text-heading-2">Get in Contact with Me!</p>
     <form
       onsubmit={handleContactSubmit}
-      class="contact__inputs flex-col space-above-lg"
+      class="contact__inputs flex-col space-above-xlg"
     >
+      <label for="email" class="text-caption contact__label">Email</label>
       <input
         id="email"
         type="email"
         placeholder="yourname@email.com"
         autocomplete="email"
       />
-      <textarea id="message" placeholder="message"></textarea>
+      <label for="message" class="text-caption contact__label space-above-sm"
+        >Message</label
+      >
+      <textarea
+        id="message"
+        placeholder="Hello, I am interested in getting in contact about your recent project ToneTools!"
+      ></textarea>
       <button type="submit" class="btn contact__submit">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -164,8 +159,8 @@
 
   <footer class="footer section">
     <div class="wrapper flex-col">
-      <button onclick={handleDownloadCvPressed} class="btn btn--outlined"
-        >Download CV</button
+      <a href="files/resume.pdf" class="btn btn--outlined" download
+        >Download My Resume</a
       >
       <img
         loading="lazy"
@@ -203,7 +198,7 @@
   .hero-section {
     display: flex;
     align-items: center;
-    height: 48dvh;
+    height: 48svh;
 
     background-color: var(--color-primary-2xdark);
 
@@ -228,7 +223,7 @@
   }
 
   .section#projects {
-    padding-block: 8dvh;
+    padding-block: 8svh;
   }
 
   .projects-grid {
@@ -243,7 +238,7 @@
 
   .section#about {
     background-color: var(--color-bg-surface-2);
-    padding-block: 10dvh;
+    padding-block: 10svh;
   }
 
   .about {
@@ -266,7 +261,7 @@
   }
 
   .section#contact {
-    padding-block: 12dvh;
+    padding-block: 12svh;
 
     text-align: center;
     background-color: var(--color-bg-primary);
@@ -279,14 +274,19 @@
   .contact__inputs {
     max-width: 400px;
     margin-inline: auto;
-    gap: var(--space-12);
+  }
+
+  .contact__label {
+    text-align: left;
+    color: var(--color-white);
   }
 
   .contact__submit {
     padding: var(--space-8) var(--space-16);
     background-color: transparent;
-    border: 2px solid var(--color-on-bg-primary);
+    border: 1px solid var(--color-on-bg-primary);
     color: var(--color-on-bg-primary);
+    margin-top: var(--space-16);
   }
 
   .contact__submit:hover {
@@ -294,7 +294,7 @@
   }
 
   .footer {
-    padding-top: 8dvh;
+    padding-top: 8svh;
     background-color: var(--color-bg-surface-dark);
   }
 

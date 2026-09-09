@@ -13,7 +13,7 @@
 
   let {
     images,
-    interval = 3000,
+    interval = 5000,
     width = "full",
     height = 400,
   }: Props = $props();
@@ -57,13 +57,24 @@
   <div class="carousel-inner">
     {#each images as image, i (image)}
       {#if i === current}
-        <img
-          src={image}
-          alt="carousel"
-          class="carousel-image"
-          draggable="false"
-          transition:fade={{ duration: 1000, easing: cubicInOut }}
-        />
+        {#if image.endsWith(".webm")}
+          <video
+            src={image}
+            autoplay
+            muted
+            loop
+            playsinline
+            class="carousel-image"
+          ></video>
+        {:else}
+          <img
+            src={image}
+            alt="carousel"
+            class="carousel-image"
+            draggable="false"
+            transition:fade={{ duration: 1000, easing: cubicInOut }}
+          />
+        {/if}
       {/if}
     {/each}
   </div>

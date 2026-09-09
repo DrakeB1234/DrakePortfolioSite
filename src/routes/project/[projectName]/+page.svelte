@@ -10,7 +10,7 @@
 </script>
 
 <main class="wrapper">
-  <a class="btn" href="/">
+  <a class="btn btn__return" href="/">
     <BackIcon />
     <p class="body">Return</p>
   </a>
@@ -116,6 +116,10 @@
     padding-top: var(--space-8);
     padding-bottom: var(--space-36);
     background-color: var(--color-bg-surface-1);
+  }
+
+  .btn__return {
+    margin-left: var(--space-8);
   }
 
   .btn:hover {
